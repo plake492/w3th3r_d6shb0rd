@@ -1,4 +1,4 @@
-const baseUrl = 'http://api.openweathermap.org';
+const baseUrl = 'https://api.openweathermap.org';
 const key = 'appid=77bcd7a808e45268113d6c1714cf54bc';
 const lsRef = 'city-search-history';
 
@@ -87,7 +87,7 @@ const displayCurrentWeather = (data, name) =>
   (weatherDisplayCurrentWrapper.innerHTML = `
     <h2>${data.name} ${name !== data.name ? '(' + name + ')' : ''}</h2>
     <p>
-      <b>Temp:</b>${data.main.temp}
+      <b>Temp:</b> ${data.main.temp}
     </p>
     <img src="https://openweathermap.org/img/wn/${
       data.weather[0].icon
