@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'W95FA';
+  src: url("./assets/fonts/W95FA/w95fa.woff2/") format("woff2"), url("./assets/fonts/W95FA/w95fa.woff") format("woff");
+  /* Pretty Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: url("./assets/fonts/Silka/silka-regular-webfont.woff2") format("woff2"), url("./assets/fonts/Silka/silka-regular-webfont.woff") format("woff"), url("./assets/fonts/Silka/silka-regular-webfont.ttf") format("ttf"), url("./assets/fonts/Silka/silka-regular-webfont.eot") format("eot");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-height: 110px;
+}
+
+html {
+  font-family: 'Silka', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: #08033d;
+  color: #dedede;
+  font-family: 'Silka' Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+p:not(:last-child),
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+h4:not(:last-child),
+h5:not(:last-child),
+h6:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+input,
+button {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  background: #00000000;
+  color: #dedede;
+  border: #dedede solid 1px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+input:hover,
+button:hover {
+  -webkit-transform: translate(2px, 0px);
+          transform: translate(2px, 0px);
+  background: #dedede;
+  color: #222222;
+}
+
+header {
+  padding: 2rem;
+  background-color: #111111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  font-family: 'W95FA', Arial, Helvetica, sans-serif;
+}
+
+header .header-nav-button {
+  font-size: 36px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  header .header-nav-button {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+}
+
+.main-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main-wrapper .search-section-container {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height 300ms ease-in-out;
+  transition: height 300ms ease-in-out;
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper .search-section-container {
+    --search-position: 0px;
+    max-height: var(--search-position);
+  }
+  .main-wrapper .search-section-container.open {
+    --search-position: 100%;
+  }
+}
+
+.main-wrapper .search-section {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  padding: 2rem;
+  background-color: #222222;
+  height: calc(100vh - var(--header-height) + 2px);
+  overflow: scroll;
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper .search-section {
+    min-height: unset;
+    padding: 1rem;
+  }
+}
+
+.main-wrapper .search-section #search-form {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: #dedede solid 3px;
+}
+
+.main-wrapper .search-section .remove-history-button {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  padding: 0.125rem;
+  border-radius: 4px;
+}
+
+.main-wrapper .search-section .remove-history-button:hover {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  color: #dedede !important;
+  border: #dedede solid 1px;
+}
+
+.main-wrapper .search-section .history-btn-wrapper:hover .remove-history-button {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.main-wrapper .search-section .clear-search-history {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: #dedede solid 3px;
+}
+
+.main-wrapper .search-section .clear-search-history button {
+  border-color: #c73232;
+  color: #c73232;
+}
+
+.main-wrapper .weather-display {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+  padding: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper .weather-display {
+    padding: 1rem;
+  }
+}
+
+.main-wrapper .weather-display__current {
+  margin-bottom: 2rem;
+  background-color: #10cfcc;
+  background: linear-gradient(140deg, #10cfcc 0%, #12059e 100%);
+  color: #222222;
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  -webkit-box-shadow: inset 5px 5px 14px 7px #2222222b, 5px 5px 10px 3px #1111112b;
+          box-shadow: inset 5px 5px 14px 7px #2222222b, 5px 5px 10px 3px #1111112b;
+}
+
+.main-wrapper .weather-display__current > * {
+  padding-bottom: 0.25rem;
+}
+
+.main-wrapper .weather-display__upcomming {
+  --slide-number: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.main-wrapper .weather-display__upcomming > * {
+  min-width: calc( 100% / var(--slide-number) - 1rem + 1rem / var(--slide-number));
+  background-color: #10cfcc;
+  color: #222222;
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  -webkit-box-shadow: inset 5px 5px 14px 7px #2222222b, 5px 5px 10px 3px #1111112b;
+          box-shadow: inset 5px 5px 14px 7px #2222222b, 5px 5px 10px 3px #1111112b;
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper .weather-display__upcomming > * {
+    --slide-number: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-wrapper .weather-display__upcomming > * {
+    --slide-number: 2;
+  }
+}
+
+.main-wrapper .weather-display__upcomming > * > * {
+  padding-bottom: 0.25rem;
+}
+/*# sourceMappingURL=style.css.map */

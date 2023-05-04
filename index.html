@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W31h3r</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>W31h3r D0shb0rd</h1>
+      </div>
+      <div class="header-nav-button">&#9776;</div>
+    </header>
+    <main class="main-wrapper">
+      <aside class="search-section-container">
+        <div class="search-section">
+          <form id="search-form">
+            <div>
+              <label for="search-input">Search for city</label>
+            </div>
+            <input id="search-input" type="text" placeholder="Ex: Austin" />
+            <button type="submit">search</button>
+          </form>
+
+          <p>Search History</p>
+          <div class="search-history"></div>
+          <div class="clear-search-history">
+            <button id="clear-history">Clear History</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="weather-display">
+        <h2>Weather Now</h2>
+        <section class="weather-display__current"></section>
+        <h2>Five Day Forecast</h2>
+        <section class="weather-display__upcomming"></section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
